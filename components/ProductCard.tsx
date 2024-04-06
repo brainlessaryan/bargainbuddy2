@@ -1,12 +1,12 @@
 import { Product } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
 interface Props {
   product: Product;
 }
- 
+
 const ProductCard = ({ product }: Props) => {
   return (
     <Link href={`/products/${product._id}`} className="product-card">
@@ -24,15 +24,18 @@ const ProductCard = ({ product }: Props) => {
         <h3 className="product-title">{product.title}</h3>
 
         <div className="flex justify-between">
-         
-          <p className="text-black text-lg font-semibold opacity-50">
-            <span>{product?.currency}</span>
-            <span>{product?.currentPrice}</span>
-          </p>
+          {product.currentPrice === 0 ? (
+            <p className="text-red-300 text-lg font-semibold"> Currently Out of Stock</p>
+          ) : (
+            <p className="text-black text-lg font-semibold opacity-50">
+              <span>{product.currency}</span>
+              <span>{product.currentPrice}</span>
+            </p>
+          )}
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;
