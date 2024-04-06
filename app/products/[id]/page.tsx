@@ -143,7 +143,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
               <PriceInfoCard 
                 title="Highest Price"
                 iconSrc="/assets/icons/arrow-up.svg"
-                value={`${product.currency} ${formatNumber(product.highestPrice)}`}
+                value={`${product.currency} ${formatNumber(product.originalPrice)}`}
                 borderColor="#eb3f26"
               />
               <PriceInfoCard 
