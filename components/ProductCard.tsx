@@ -25,7 +25,7 @@ const ProductCard = ({ product }: Props) => {
 
         <div className="flex justify-between">
           {product.currentPrice === 0 ? (
-            <p className="text-red-300 text-lg font-semibold"> Currently Out of Stock</p>
+            <p className="text-red-400 text-lg font-semibold"> Currently Out of Stock</p>
           ) : (
             <p className="text-black text-lg font-semibold opacity-50">
               <span>{product.currency}</span>
