@@ -35,16 +35,15 @@ const Searchbar = () => {
     const isValidLink = isValidAmazonProductURL(searchPrompt);
 
     if(!isValidLink) return alert('Please provide a valid Amazon link')
-
+      
     try {
       setIsLoading(true);
-
-      // Scrape the product page
       const product = await scrapeAndStoreProduct(searchPrompt);
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
+      return alert ('Your item has been added to the list below');
     }
   }
 
